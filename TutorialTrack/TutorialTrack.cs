@@ -13,9 +13,9 @@ using System.Windows.Media.Imaging;
 
 namespace TutorialTrack
 {
-    public class TutorialTrack : IBasePlug
+    public class TutorialTrack : BasePlug
     {
-        public ImageSource GetIcon()
+        public override ImageSource GetIcon()
         {
             // 获取当前程序集
             Assembly assembly = Assembly.GetAssembly(GetType());
@@ -34,19 +34,31 @@ namespace TutorialTrack
             }
         }
 
-        public List<PermissionsClass.Permissions> GetPermissions()
+        public override List<PermissionsClass.Permissions> GetPermissions()
         {
             return new List<PermissionsClass.Permissions>() { PermissionsClass.Permissions.InputAndOutput };
         }
 
-        public System.Windows.Controls.UserControl GetView()
+        public override System.Windows.Controls.UserControl GetView()
         {
             return FileUtils.tutorialTrackUserControl;
         }
 
-        public List<IControl> GetControl()
+        public override List<IControl> GetControl()
         {
             return FileUtils.iControls;
+        }
+
+        public override PlugInfo GetInfo()
+        {
+            PlugInfo plugInfo = new PlugInfo
+            {
+                Title = "教程轨",
+                Author = "hhm",
+                Version = "1.1.0",
+                Describe = "通过导入教程轨来显示下一个应该按哪个按键。" ,
+            };
+            return plugInfo;
         }
     }
 }

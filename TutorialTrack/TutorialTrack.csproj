@@ -37,7 +37,7 @@
       <HintPath>DLL\Operation.dll</HintPath>
     </Reference>
     <Reference Include="PlugLib">
-      <HintPath>DLL\PlugLib.dll</HintPath>
+      <HintPath>.\PlugLib.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
